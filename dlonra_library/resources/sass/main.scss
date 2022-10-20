@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: #fff;
+}
+.navbar{
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    margin-left: -300px;
+    background-color: blueviolet;
+    transition: 0.4s;
+    .sidebarNavigator{
+        svg {
+            width: 2rem;
+            height: 2rem;   
+
+        }
+        font-size:2rem;
+    }
+    .nav-link{
+        font-size: 1.25em;
+        &:active,&:hover,&:focus{
+            background-color: #FFFFFF26;
+        }
+    }
+}
+#menu-btn{
+    border-radius: 15px;
+}
+.module{
+    transition: 0.4s;
+}
+.active-nav{
+    margin-left: 0;
+}
+.active-cont{
+    margin-left: 250px;
+}
