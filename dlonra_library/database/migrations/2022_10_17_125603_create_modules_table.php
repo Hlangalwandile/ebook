@@ -16,9 +16,15 @@ class CreateModulesTable extends Migration
         Schema::create('modules', function (Blueprint $table) {
             $table->id();
             $table->integer('order');
+            $table->integer('bookID');
             $table->string('title');
             $table->timestamps();
         });
+
+        $modules = [
+            ['order'=> 1, 'bookID' => 1, 'title' => 'The Fundamentals of Industrial Electronics',]
+        ];
+        DB::table('modules')->insert($modules);
     }
 
     /**

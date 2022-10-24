@@ -6,14 +6,23 @@
 body{
     min-height: 100vh;
     background-color: #fff;
+    background-color: rgb(255, 239, 201);
+    
+}
+.ebook-main{
+    padding: 0px;
+    
 }
 .navbar{
     width: 250px;
     height: 100vh;
     position: fixed;
-    margin-left: -300px;
-    background-color: blueviolet;
+    
+    
     transition: 0.4s;
+    li.nav-item.w-100 {
+        padding-left: 1.5em;
+    }
     .sidebarNavigator{
         svg {
             width: 2rem;
@@ -25,19 +34,52 @@ body{
     .nav-link{
         font-size: 1.25em;
         &:active,&:hover,&:focus{
-            background-color: #FFFFFF26;
+            background-color: rgba(0,0,0,0.5);
         }
     }
 }
+h1.module-title {
+    margin-top: 0.1em;
+}
+
+.active-flip{
+    -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 #menu-btn{
     border-radius: 15px;
+    &:focus{
+        box-shadow: 0 0 0 0.25rem grey;
+    }
 }
+.above-module{
+    width: 100%;
+}
+.ModuleOrderNumber{
+    color: gray;
+}
+/* Module */
 .module{
     transition: 0.4s;
+    padding-top: 2em;
+    margin-left: 250px;
+    h1{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .above-module{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .unit{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
 .active-nav{
-    margin-left: 0;
+    margin-left: -300px;
+    // margin-left: 0;
 }
 .active-cont{
-    margin-left: 250px;
+    margin-left: 0;
 }

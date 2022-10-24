@@ -24,12 +24,13 @@
 <body>
     <div id="app">
   
-        <main class="container-fluid">
+        <main class="container-fluid ebook-main">
             @yield('content')
         </main>
     </div>
         <!-- Scripts -->
         <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
         <script src="{{ asset('frontend/js/jquery-3.6.1.min.js') }}" defer></script>
+        <script src="{{ asset('frontend/js/ebook.js') }}" defer></script>
 </body>
 </html>

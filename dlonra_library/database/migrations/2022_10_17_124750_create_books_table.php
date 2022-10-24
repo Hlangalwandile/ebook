@@ -22,6 +22,12 @@ class CreateBooksTable extends Migration
             $table->string('publisher');
             $table->timestamps();
         });
+        $categories = array("Electrical Engineering","Dlonra Books");
+        $cat = json_encode($categories);
+        $books = [
+            ['title'=>'N1 Industrial Electronics Mo Arnold 2nd Edition', 'ISBN' => '9781991222534', 'categories'=> $cat , 'author'=> 'Mo Arnold', 'publisher' => 'Dlonra']
+        ];
+        DB::table('books')->insert($books);
     }
 
     /**
