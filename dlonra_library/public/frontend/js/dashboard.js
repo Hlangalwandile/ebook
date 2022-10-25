@@ -1,6 +1,6 @@
 var menu_btn = document.querySelector("#menu-btn")
-var sidebar = document.querySelector("#ebook-sidebar")
-var module = document.querySelector(".module")
+var sidebar = document.querySelector("#admin-sidebar")
+var module = document.querySelector(".content")
 
 menu_btn.addEventListener("click",()=>{
     sidebar.classList.toggle("active-nav")

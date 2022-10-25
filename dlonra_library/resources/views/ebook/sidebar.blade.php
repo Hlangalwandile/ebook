@@ -17,10 +17,9 @@
     <ul class="navbar-nav d-flex flex-column mt-5 w-100">
         @foreach ($units as $unit)
         @if ($unit->moduleID == $current_module)
-        <li class="nav-item w-100">
+        <li class="nav-item ebook-nav-item  w-100">
             <a href="#unit-{{$unit->id}}" class="nav-link  pl-4">{{$unit->header}}</a>
         </li>
-        <hr>
         @endif
     @endforeach
         

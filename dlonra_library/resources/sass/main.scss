@@ -6,12 +6,10 @@
 body{
     min-height: 100vh;
     background-color: #fff;
-    background-color: rgb(255, 239, 201);
     
 }
 .ebook-main{
     padding: 0px;
-    
 }
 .navbar{
     width: 250px;
@@ -31,13 +29,18 @@ body{
         }
         font-size:2rem;
     }
-    .nav-link{
-        font-size: 1.25em;
-        &:active,&:hover,&:focus{
-            background-color: rgba(0,0,0,0.5);
+        .ebook-nav-item{
+            &:active,&:hover,&:focus{
+                background-color: antiquewhite;
+        }
+        
+        .nav-link{
+            font-size: 1.25em;
         }
     }
+    
 }
+
 h1.module-title {
     margin-top: 0.1em;
 }
@@ -49,7 +52,13 @@ h1.module-title {
 #menu-btn{
     border-radius: 15px;
     &:focus{
-        box-shadow: 0 0 0 0.25rem grey;
+        box-shadow: 0 0 0 1px grey;
+    }
+}
+#menu-btn-dash{
+    border-radius: 15px;
+    &:focus{
+        box-shadow: 0 0 0 0.1px grey;
     }
 }
 .above-module{
@@ -63,6 +72,7 @@ h1.module-title {
     transition: 0.4s;
     padding-top: 2em;
     margin-left: 250px;
+    background-color: antiquewhite;
     h1{
         padding-left: 30px;
         padding-right: 30px;
@@ -76,10 +86,30 @@ h1.module-title {
         padding-right: 30px;
     }
 }
+/*content*/
+.content{
+    transition: 0.4s;
+    padding-top: 2em;
+    margin-left: 250px;
+    padding-left: 2em;
+}
+
 .active-nav{
     margin-left: -300px;
     // margin-left: 0;
 }
 .active-cont{
     margin-left: 0;
+}
+#admin-sidebar{
+    background-color:rgba($color: #000000, $alpha: 0.1);
+    .main-dash-nav-item{
+        &:active,&:hover,&:focus{
+            background-color: #fff;
+            opacity: 0.5;
+        }
+    }
+}
+.dashboard-main{
+    padding: 0px;
 }
