@@ -1,4 +1,4 @@
-var menu_btn = document.querySelector("#menu-btn")
+var menu_btn = document.querySelector("#menu-btn-dash")
 var sidebar = document.querySelector("#admin-sidebar")
 var module = document.querySelector(".content")
 

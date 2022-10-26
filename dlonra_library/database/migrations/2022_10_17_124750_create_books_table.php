@@ -16,10 +16,11 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('ISBN');
-            $table->json('categories');
-            $table->string('author');
-            $table->string('publisher');
+            $table->string('ISBN')->nullable();
+            $table->json('categories')->nullable();
+            $table->string('author')->nullable();
+            $table->string('discription')->nullable();
+            $table->string('publisher')->nullable();
             $table->timestamps();
         });
         $categories = array("Electrical Engineering","Dlonra Books");

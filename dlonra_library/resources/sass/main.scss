@@ -60,6 +60,7 @@ h1.module-title {
     &:focus{
         box-shadow: 0 0 0 0.1px grey;
     }
+    
 }
 .above-module{
     width: 100%;
@@ -112,4 +113,7 @@ h1.module-title {
 }
 .dashboard-main{
     padding: 0px;
+}
+.page-buttons-section{
+    margin: 30px auto 30px auto;
 }

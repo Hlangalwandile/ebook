@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'DLonra Library') }}</title>
 
 
 
@@ -19,6 +19,7 @@
     <link href="{{ asset('frontend/css/bootstrap5.2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/bootstrap5.2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -32,5 +33,6 @@
         <!-- Scripts -->
         <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
         <script src="{{ asset('frontend/js/jquery-3.6.1.min.js') }}" defer></script>
+        <script src="{{ asset('js/datatables.min.js') }}" defer></script>
 </body>
 </html>

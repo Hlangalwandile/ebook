@@ -1,18 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
+use App\Models\Book;
+use App\Models\User;
+use Auth;
 class DashboardController extends Controller
 {
+
+   public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function showDashboard()
     {
-       return view('dashboard.dashboard');
+      $books = Book::all();
+      return view('dashboard.dashboard');
     }
     public function showBooks()
     {
-       return view('dashboard.books');
+      $books = Book::All();
+      
+      return view('dashboard.books',['books'=>$books]);
     }
     public function showRedeem()
     {

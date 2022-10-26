@@ -113,3 +113,7 @@ h1.module-title {
 .dashboard-main {
   padding: 0px;
 }
+
+.page-buttons-section {
+  margin: 30px auto 30px auto;
+}

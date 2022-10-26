@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'DLonra Library') }}</title>
 
 
 
@@ -19,7 +19,8 @@
     <link href="{{ asset('frontend/css/bootstrap5.2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/bootstrap5.2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -35,9 +36,17 @@
             </div>
         </main>
     </div>
-        <!-- Scripts -->
-        <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
-        <script src="{{ asset('frontend/js/jquery-3.6.1.min.js') }}" defer></script>
-        <script src="{{ asset('frontend/js/dashboard.js') }}" defer></script>
+<!-- Scripts -->
+<script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
+<script src="{{ asset('frontend/js/jquery-3.6.1.min.js') }}" defer></script>
+<script src="{{ asset('frontend/js/dashboard.js') }}" defer></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="{{ asset('js/datatables.min.js') }}" defer></script>
+
+<script>
+$(document).ready( function () {
+    $('#myBooksTable').DataTable();
+} );
+</script>
 </body>
 </html>

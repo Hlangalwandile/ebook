@@ -15,7 +15,7 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
@@ -29,6 +29,10 @@ Route::controller(DashboardController::class)->group(function (){
 });
 
 Route::controller(EbookController::class)->group(function (){
+    Route::get('/ebook/addBook','addBookPage')->name('ebook.addBook');
     Route::get('/ebook/{id}','show')->name('ebook.show');
+
+    Route::POST('/ebook/addBook','saveBook')->name('ebook.saveBook');
+    
 
 });
