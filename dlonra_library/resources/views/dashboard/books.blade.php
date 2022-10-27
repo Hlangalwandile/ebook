@@ -15,9 +15,7 @@
     <thead>
       <tr>
         <th scope="col">Cover</th>
-        <th scope="col">Title</th>
-        <th scope="col">Author</th>
-        <th scope="col">Publisher</th>
+        <th scope="col">Book</th>
         <th scope="col">Categories</th>
         <th scope="col"></th>
       </tr>
@@ -28,11 +26,20 @@
             <th scope="row">
                 <img src="https://dummyimage.com/100x100/000/fff"  class="img-thumbnail" alt="...">
             </th>
-            <td>{{$book->title}}</td>
-            <td>{{$book->author}}</td>
-            <td>{{$book->publisher}}</td>
-            <td> </td>
-            <td><a href="http://">read</a></td>
+            <td>
+              <strong>Title : </strong>{{$book->title}} <br>
+              <strong>Author : </strong>{{$book->author}} <br>
+              <strong>Publisher : </strong>{{$book->publisher}}
+            </td>
+            <td> 
+              @foreach ($book->categories as $category)
+                  {{$category}} <br>
+              @endforeach
+            </td>
+            <td>
+              <a class="btn btn-primary" href="{{route('ebook.show',$book->id)}}">open</a>
+              <a href="{{route('ebook.edit',$book->id)}}" class="btn btn-warning">edit</a>
+            </td>
           </tr>
         @endforeach
     </tbody>

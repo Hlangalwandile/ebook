@@ -23,6 +23,12 @@ class EbookController extends Controller
         return view('ebook.page',['book' => $book , 'units' => $units, 'modules' => $modules, 'current_module' => 1 ]);
     }
 
+    public function edit($id){
+        $book = Book::find($id);
+        $modules = Module::all()->where('bookID',$id);
+        return view('ebook.editBook',['book' => $book,'modules' => $modules]);
+    }
+
     public function addBookPage()
     {
         return view('ebook.addBook');
@@ -32,8 +38,26 @@ class EbookController extends Controller
     {
         $book = new Book();
         $book -> title = request('title');
-
+        $book -> ISBN = request('ISBN');
+        $book -> categories = request('categories');
+        $book -> discription = request('discription');
+        $book -> author = request('author');
+        $book -> publisher = request('publisher');
         $message = 'Book added successfully';
+        $book -> save();
         return redirect(route('dashboard.books'))->with('success',$message);
+    }
+
+    public function editBook($id)
+    {
+        $book = Book::find($id);
+        $book -> title = request('title');
+        $book -> ISBN = request('ISBN');
+        $book -> categories = request('categories');
+        $book -> discription = request('discription');
+        $book -> author = request('author');
+        $book -> publisher = request('publisher');
+        $modules = Module::all()->where('bookID',$id);
+        return view('ebook.editBook',['book' => $book,'modules' => $modules]);
     }
 }

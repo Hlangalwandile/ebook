@@ -10,6 +10,9 @@
     </a>
     <ul class="navbar-nav d-flex flex-column mt-5 w-100">
         <li class="nav-item main-dash-nav-item w-100">
+            <a href="{{route('dashboard')}}" class="nav-link  pl-4">Dashboard</a>
+        </li> 
+        <li class="nav-item main-dash-nav-item w-100">
             <a href="{{route('dashboard.books')}}" class="nav-link  pl-4">Books</a>
         </li>       
         <li class="nav-item main-dash-nav-item w-100">

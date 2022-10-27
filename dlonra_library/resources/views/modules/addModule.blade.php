@@ -16,7 +16,7 @@
                     <input type="text" class="form-control" id="addISBN" name="ISBN" placeholder="ISBN No">
                   </div>
                   <div class="mb-3">
-                    <label for="discription" class="form-label">Select Categories:</label>
+                    <label for="discription" class="form-label">Book discription:</label>
                     <textarea name="" id="discription" name="discription" cols="30" class="form-control" rows="10"></textarea>
                   </div>
                   <button type="submit" class="btn btn-primary">submit</button>

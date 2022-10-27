@@ -30,9 +30,9 @@ Route::controller(DashboardController::class)->group(function (){
 
 Route::controller(EbookController::class)->group(function (){
     Route::get('/ebook/addBook','addBookPage')->name('ebook.addBook');
+    Route::get('/ebook/edit','edit')->name('ebook.edit');
     Route::get('/ebook/{id}','show')->name('ebook.show');
 
-    Route::POST('/ebook/addBook','saveBook')->name('ebook.saveBook');
-    
+    Route::post('/ebook/saveBook','saveBook')->name('ebook.saveBook');
 
 });
