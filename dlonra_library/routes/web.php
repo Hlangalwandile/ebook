@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EbookController;
+use App\Http\Controllers\UnitController;
 use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
@@ -29,10 +30,12 @@ Route::controller(DashboardController::class)->group(function (){
 });
 
 Route::controller(EbookController::class)->group(function (){
-    Route::get('/ebook/addBook','addBookPage')->name('ebook.addBook');
-    Route::get('/ebook/edit','edit')->name('ebook.edit');
-    Route::get('/ebook/{id}','show')->name('ebook.show');
-
+    Route::get('/books/addBook','addBook')->name('ebook.addBook');
+    Route::get('/books/editBook/{id}','editBook')->name('ebook.editBook');
+    Route::get('/books/{id}','show')->name('ebook.show');
     Route::post('/ebook/saveBook','saveBook')->name('ebook.saveBook');
+});
 
+Route::controller(UnitController::class)->group(function (){
+    Route::get('/books/units/{book}/{module}','index')->name('units.index');
 });

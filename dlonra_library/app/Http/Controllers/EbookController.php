@@ -23,13 +23,13 @@ class EbookController extends Controller
         return view('ebook.page',['book' => $book , 'units' => $units, 'modules' => $modules, 'current_module' => 1 ]);
     }
 
-    public function edit($id){
+    public function editBook($id){
         $book = Book::find($id);
         $modules = Module::all()->where('bookID',$id);
         return view('ebook.editBook',['book' => $book,'modules' => $modules]);
     }
 
-    public function addBookPage()
+    public function addBook()
     {
         return view('ebook.addBook');
     }
@@ -48,7 +48,7 @@ class EbookController extends Controller
         return redirect(route('dashboard.books'))->with('success',$message);
     }
 
-    public function editBook($id)
+    public function saveEditBook($id)
     {
         $book = Book::find($id);
         $book -> title = request('title');
@@ -58,6 +58,7 @@ class EbookController extends Controller
         $book -> author = request('author');
         $book -> publisher = request('publisher');
         $modules = Module::all()->where('bookID',$id);
+
         return view('ebook.editBook',['book' => $book,'modules' => $modules]);
     }
 }

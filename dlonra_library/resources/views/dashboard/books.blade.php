@@ -38,7 +38,7 @@
             </td>
             <td>
               <a class="btn btn-primary" href="{{route('ebook.show',$book->id)}}">open</a>
-              <a href="{{route('ebook.edit',$book->id)}}" class="btn btn-warning">edit</a>
+              <a href="{{route('ebook.editBook',$book->id)}}" class="btn btn-warning">edit</a>
             </td>
           </tr>
         @endforeach
