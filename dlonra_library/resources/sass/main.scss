@@ -73,7 +73,7 @@ h1.module-title {
     transition: 0.4s;
     padding-top: 2em;
     margin-left: 250px;
-    background-color: antiquewhite;
+    height: 100%;
     h1{
         padding-left: 30px;
         padding-right: 30px;
@@ -116,4 +116,36 @@ h1.module-title {
 }
 .page-buttons-section{
     margin: 30px auto 30px auto;
+}
+#ebook-sidebar{
+    .chapter-link{
+        text-decoration:none;
+    }
+    .chapter{
+        font-size: 30px;
+    }
+    .ebook-nav-item a{
+        font-size: 12px;
+    }
+}
+.chapter-chevron{
+    
+    stroke: #999999;
+    stroke-width: 1px;
+}
+.chapter-chevron-disables{
+    
+    opacity: 0.2;
+    stroke-width: 1px;
+}
+.isDisabled {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+  }
+.unit{
+    img{
+        width: 100%;
+    }
 }

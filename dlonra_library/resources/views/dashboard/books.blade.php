@@ -1,6 +1,5 @@
 @extends('layouts.user')
 @section('content')
-
 <div class="container">
 
 <h2>My Books</h2>

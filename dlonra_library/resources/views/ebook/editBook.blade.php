@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="container col-md-4">
-        <form action="{{route('ebook.saveBook')}}" method="POST" >
+    <form action="{{route('ebook.saveBook')}}" method="POST" >
           @csrf
         <div class="row">
             <div class="col-md-12">
@@ -40,15 +40,16 @@
     </div>
     <div class="container col-md-6">
         <h2>Modules</h2>
-        <form action="" method="post" class="mb-3">
+        <form action="{{route('module.addModule',$book->id)}}" method="post" class="mb-3">
+            @csrf
             <div class="mb-3">
                 <label for="addModule" class="form-label">Module Title:</label>
-                <input type="text" class="form-control" id="addModule" name='title' placeholder="title">
+                <input type="text" class="form-control" id="addModule" name='title' placeholder="title" required>
             </div>
               <button type="submit" class="btn btn-primary">add module</button>
         </form>
         @foreach ($modules as $module)
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-header">Module:{{$module->order}}</div>
             <div class="card-body">{{$module->title}}</div>
             <div class="card-footer ">

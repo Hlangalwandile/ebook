@@ -19,8 +19,25 @@ class EbookController extends Controller
     public function show($id){
         $book = Book::find($id);
         $modules = Module::all()->where('bookID',$id);
-        $units = Unit::all()->where('bookID',$id);
-        return view('ebook.page',['book' => $book , 'units' => $units, 'modules' => $modules, 'current_module' => 1 ]);
+        if(count($modules)){
+            $units = Unit::all()->where('bookID',$id);
+            return view('ebook.page',['book' => $book , 'units' => $units, 'modules' => $modules, 'current_module' => 1 ]);
+        } else {
+            $message = 'Book has no chapters yet';
+            return redirect(route('dashboard.books'))->with('error',$message);
+        }  
+    }
+    
+    public function showModule($id,$module){
+        $book = Book::find($id);
+        $modules = Module::all()->where('bookID',$id);
+        if(count($modules)){
+            $units = Unit::all()->where('bookID',$id);
+            return view('ebook.page',['book' => $book , 'units' => $units, 'modules' => $modules, 'current_module' => $module ]);
+        } else {
+            $message = 'Book has no chapters yet';
+            return redirect(route('dashboard.books'))->with('error',$message);
+        } 
     }
 
     public function editBook($id){
