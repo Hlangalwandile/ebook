@@ -41,6 +41,8 @@ Route::controller(EbookController::class)->group(function (){
 
 Route::controller(UnitController::class)->group(function (){
     Route::get('/books/units/{book}/{module}','index')->name('units.index');
+    Route::get('/books/units/add-unit/{book}/{module}','addUnit')->name('units.addUnit');
+    Route::post('/books/units/save-unit/{book}/{module}','saveUnit')->name('units.saveUnit');
 });
 
 Route::controller(ModuleController::class)->group(function (){

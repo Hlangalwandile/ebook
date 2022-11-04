@@ -47,6 +47,7 @@
                 <input type="text" class="form-control" id="addModule" name='title' placeholder="title" required>
             </div>
               <button type="submit" class="btn btn-primary">add module</button>
+              
         </form>
         @foreach ($modules as $module)
         <div class="card mb-3">
@@ -55,7 +56,8 @@
             <div class="card-footer ">
                 <div class="row">
                     <div class="col-sm-6">
-                        <a href="{{route('units.index',[$module->bookID,$module->id])}}" class="btn btn-outline-primary">units</a>
+                        <a href="{{route('units.addUnit',[$module->bookID,$module->id])}}" class="btn btn-primary">Add unit</a>
+                        <a href="{{route('units.index',[$module->bookID,$module->id])}}" class="btn btn-outline-primary">Units</a>
                     </div>
                     <div class="col-sm-6 d-flex justify-content-end">
                         <form action="" method="post">

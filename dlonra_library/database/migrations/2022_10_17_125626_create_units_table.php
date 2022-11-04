@@ -22,10 +22,10 @@ class CreateUnitsTable extends Migration
             $table->string('title')->nullable();
             $table->string('header')->nullable();
             $table->text('text')->nullable();
-            $table->string('image1')->nullable();
-            $table->string('image2')->nullable();
-            $table->string('image3')->nullable();
-            $table->string('image4')->nullable();
+            $table->json('image1')->nullable();
+            $table->json('image2')->nullable();
+            $table->json('image3')->nullable();
+            $table->json('image4')->nullable();
             $table->timestamps();
         });
         $units = [

@@ -22,8 +22,11 @@
     <link href="{{ asset('/css/main.css') }}" rel="stylesheet">
 </head>
 <body>
+    <div id="btngotodash">
+        <a href="{{route('dashboard.books')}}" class="btn btngotodash" >close book</a>
+    </div>
     <div id="app">
-       
+        
         <main class="container-fluid ebook-main">
             
             @yield('content')

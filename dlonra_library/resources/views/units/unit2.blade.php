@@ -12,29 +12,58 @@
                     @endphp
                 </div>
                 @endisset
-                @if (isset($unit->image1))
-                    <div class="col unit-img-col">
-                        <img src="https://dummyimage.com/250x250/000/fff" alt="">
-                        <p>image</p>
-                    </div> 
+                 @if (!empty($unit->image1))
+                    @php
+                        $imageArray = $unit->image1;
+                        $link = '';
+                        if(isset($imageArray['name'])){
+                            $link = 'storage/images/'.$imageArray['name'];
+                        }
+                    @endphp
+                    <div class="col-md unit-img-col">
+                        <img src="{{asset($link)}}" alt="{{asset($link)}}" >
+                        <p>{{$imageArray['text']}}</p>
+                    </div>
                 @endif
-                @if (isset($unit->image2))
-                    <div class="col unit-img-col">
-                        <img src="https://dummyimage.com/250x250/000/fff" alt="">
-                        <p>image</p>
-                    </div> 
+
+                @if (!empty($unit->image2))
+                    @php
+                        $imageArray = $unit->image2;
+                        $link = '';
+                        if(isset($imageArray['name'])){
+                            $link = 'storage/images/'.$imageArray['name'];
+                        }
+                    @endphp
+                    <div class="col-md unit-img-col">
+                        <img src="{{asset($link)}}" alt="{{asset($link)}}" >
+                        <p>{{$imageArray['text']}}</p>
+                    </div>
                 @endif
-                @if (isset($unit->image3))
-                    <div class="col unit-img-col">
-                        <img src="https://dummyimage.com/250x250/000/fff" alt="">
-                        <p>image</p>
-                    </div> 
+                @if (!empty($unit->image3))
+                    @php
+                        $imageArray = $unit->image3;
+                        $link = '';
+                        if(isset($imageArray['name'])){
+                            $link = 'storage/images/'.$imageArray['name'];
+                        }
+                    @endphp
+                    <div class="col-md unit-img-col">
+                        <img src="{{asset($link)}}" alt="{{asset($link)}}" >
+                        <p>{{$imageArray['text']}}</p>
+                    </div>
                 @endif
-                @if (isset($unit->image4))
-                    <div class="col unit-img-col">
-                        <img src="https://dummyimage.com/250x250/000/fff" alt="">
-                        <p>image</p>
-                    </div> 
+                @if (!empty($unit->image4))
+                    @php
+                        $imageArray = $unit->image4;
+                        $link = '';
+                        if(isset($imageArray['name'])){
+                            $link = 'storage/images/'.$imageArray['name'];
+                        }
+                    @endphp
+                    <div class="col-md unit-img-col">
+                        <img src="{{asset($link)}}" alt="{{asset($link)}}" >
+                        <p>{{$imageArray['text']}}</p>
+                    </div>
                 @endif
             </div>
             

@@ -148,3 +148,19 @@ h1.module-title {
 .unit img {
   width: 100%;
 }
+.unit .unit-img-col {
+  max-width: 800px;
+}
+
+.btngotodash {
+  border: solid gray 1px;
+  border-radius: 15px;
+  padding: 3px 15px;
+  background-color: #fff;
+}
+
+#btngotodash {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
