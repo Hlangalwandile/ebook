@@ -1,7 +1,7 @@
 @extends('layouts.user')
 @section('content')
 <div class="row">
-    <div class="container col-md-4">
+    <div class="container col-md-5">
     <form action="{{route('ebook.saveBook')}}" method="POST" >
           @csrf
         <div class="row">
@@ -37,6 +37,12 @@
                 </div>
         </div>
     </form>
+    <div class="col-md-4 ">
+        <form action="" method="post" class="mt-3" enctype="multipart/form-data">
+            @csrf
+            <input type="file" name="bookCover" class="form-control" id="">
+        </form>
+    </div>
     </div>
     <div class="container col-md-6">
         <h2>Modules</h2>

@@ -43,6 +43,7 @@ Route::controller(UnitController::class)->group(function (){
     Route::get('/books/units/{book}/{module}','index')->name('units.index');
     Route::get('/books/units/add-unit/{book}/{module}','addUnit')->name('units.addUnit');
     Route::post('/books/units/save-unit/{book}/{module}','saveUnit')->name('units.saveUnit');
+    Route::post('/books/units/delete-unit/{book}/{module}','deleteUnit')->name('unit.deleteUnit');
 });
 
 Route::controller(ModuleController::class)->group(function (){

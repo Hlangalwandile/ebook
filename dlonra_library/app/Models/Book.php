@@ -9,6 +9,8 @@ class Book extends Model
 {
     use HasFactory;
     protected $casts = [
-        'categories' => 'array'
+        'categories' => 'array',
+        'images' => 'array'
+
     ];
 }

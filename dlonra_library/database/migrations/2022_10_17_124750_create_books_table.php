@@ -19,6 +19,7 @@ class CreateBooksTable extends Migration
             $table->string('ISBN')->nullable();
             $table->json('categories')->nullable();
             $table->string('author')->nullable();
+            $table->json('images')->nullable();
             $table->string('discription')->nullable();
             $table->string('publisher')->nullable();
             $table->timestamps();

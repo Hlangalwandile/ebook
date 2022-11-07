@@ -7,10 +7,24 @@
         <a href="{{route('units.addUnit',[$book,$module])}}" class="btn btn-outline-primary mb-3">Add unit</a>
     </div>
     <div class="col-md-12">
-        {{-- UNIT START --}}
-            <div class="card">
-                <div class="card-header">Units</div>
-                <div class="card-body">
+       @foreach ($units as $unit)
+            {{-- UNIT START --}}
+            <div class="card mb-3">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col">
+                            Unit {{$unit->order}} | Title: {{$unit->title}}
+                        </div>
+                        <div class="col ">
+                            <div class=" d-flex justify-content-end">
+                                <button class="btn btn-primary" data-bs-toggle='collapse' data-bs-target="#unit-body-{{$unit->id}}">
+                                    open
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body collapse" id="unit-body-{{$unit->id}}">
                     <form action="" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
@@ -85,9 +99,10 @@
                 </div>
                 <div class="card-footer">
                     <div class="row">
-                        <div class="col-sm-6">
-                            
-                            <a href="" class="btn btn-outline-danger">delete</a>
+                        <div class="col-sm-6">  
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteUnit{{$unit->id}}">
+                                Delete
+                            </button>    
                         </div>
                         <div class="col-sm-6 d-flex justify-content-end">
                             <form action="" method="post">
@@ -109,8 +124,29 @@
                         </div>
                     </div>
                 </div>
-            </div><br>
-        {{-- UNIT END --}}  
+            </div>
+        {{-- UNIT END --}} 
+        <div class="modal" id="deleteUnit{{$unit->id}}">
+            <div class="modal-dialog">
+                <div class="modal-centent">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Danger!</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        You are about to delete this unit "{{$unit->title}}". To delete press continue.
+                    </div>
+                    <div class="modal-footer">
+                        <form action="" method="post">
+                            @csrf
+                            <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+                            <button type="" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+       @endforeach 
     </div>
 </div>
 

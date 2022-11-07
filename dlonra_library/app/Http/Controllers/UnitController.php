@@ -64,5 +64,10 @@ class UnitController extends Controller
         $message = 'Unit added succesfully';
         return redirect(route('units.index',[$book,$module]))->with('success',$message);
     }
+
+    public function deleteUnit($book,$module)
+    {
+        
+    }
 }
 
