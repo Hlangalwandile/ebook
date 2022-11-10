@@ -5,6 +5,7 @@ use App\Http\Controllers\EbookController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +18,14 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::controller(HomeController::class)->group(function (){
+    Route::get('/','index')->name('home');
+    Route::get('/library','library')->name('library');
+    Route::get('/library/book/{id}','openBook')->name('library.book');
+
 });
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::controller(DashboardController::class)->group(function (){
     Route::get('/dashboard','showDashboard')->name('dashboard');
@@ -41,9 +43,11 @@ Route::controller(EbookController::class)->group(function (){
 
 Route::controller(UnitController::class)->group(function (){
     Route::get('/books/units/{book}/{module}','index')->name('units.index');
-    Route::get('/books/units/add-unit/{book}/{module}','addUnit')->name('units.addUnit');
-    Route::post('/books/units/save-unit/{book}/{module}','saveUnit')->name('units.saveUnit');
-    Route::post('/books/units/delete-unit/{book}/{module}','deleteUnit')->name('unit.deleteUnit');
+    Route::get('/units/pushUp/{book}/{module}/{id}','pushUp')->name('unit.pushUp');
+    Route::get('/units/pushDown/{book}/{module}/{id}','pushDown')->name('unit.pushDown');
+    Route::get('/units/add-unit/{book}/{module}','addUnit')->name('units.addUnit');
+    Route::post('/units/save-unit/{book}/{module}','saveUnit')->name('units.saveUnit');
+    Route::get('/units/delete-unit/{book}/{module}/{id}','deleteUnit')->name('unit.delete');
 });
 
 Route::controller(ModuleController::class)->group(function (){

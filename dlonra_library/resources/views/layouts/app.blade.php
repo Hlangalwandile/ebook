@@ -7,10 +7,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'DLonra Library') }}</title>
-
-
-
+    <title>DLonra Library</title>
+    <!-- fa icons -->
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -20,13 +20,14 @@
     <link href="{{ asset('frontend/css/bootstrap5.2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
   
         @include('layouts.inc.front-navbar')
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>

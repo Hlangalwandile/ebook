@@ -49,12 +49,15 @@
 
 
 <script>
+
 $(document).ready( function () {
     $.trumbowyg.svgPath = '/assets/icons.svg';
     $('#myBooksTable').DataTable();
     $('#unitText').trumbowyg();
    
 } );
+
+
 </script>
 </body>
 </html>
