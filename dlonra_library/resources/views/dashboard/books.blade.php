@@ -5,7 +5,7 @@
 <h2>My Books</h2>
 
 <div class="page-buttons-section">
-    <a class="btn btn-primary" href="{{route('ebook.addBook')}}" role="button">Add Book</a>
+    <a class="btn btn-dlonra-red" href="{{route('ebook.addBook')}}" role="button">Add Book</a>
 </div>
 
   <div class="table-responsive">
@@ -23,7 +23,19 @@
         @foreach ($books as $book)
         <tr>
             <th scope="row">
-                <img src="https://dummyimage.com/100x100/000/fff"  class="img-thumbnail" alt="...">
+              {{-- <img src="https://dummyimage.com/100x100/000/fff"  class="img-thumbnail" alt="..."> --}}  
+              @if (!empty($book->images))
+              @php
+                  $imageArray = $book->images;
+                  $link = '';
+                  if(isset($imageArray['name'])){
+                      $link = 'storage/images/'.$imageArray['name'];
+                  }
+              @endphp
+              <img src="{{asset($link)}}"  class="img-thumbnail" alt="bool cover" width="100">  
+    
+                  
+          @endif
             </th>
             <td>
               <strong>Title : </strong>{{$book->title}} <br>
@@ -31,13 +43,16 @@
               <strong>Publisher : </strong>{{$book->publisher}}
             </td>
             <td> 
+              @if (isset($book->categories))
               @foreach ($book->categories as $category)
                   {{$category}} <br>
               @endforeach
+              @endif
+              
             </td>
             <td>
-              <a class="btn btn-primary" href="{{route('ebook.show',$book->id)}}">open</a>
-              <a href="{{route('ebook.editBook',$book->id)}}" class="btn btn-warning">edit</a>
+              <a class="btn btn-dlonra-red" href="{{route('ebook.show',$book->id)}}">open</a>
+              <a href="{{route('ebook.editBook',$book->id)}}" class="btn btn-dlonra-orange">edit</a>
             </td>
           </tr>
         @endforeach

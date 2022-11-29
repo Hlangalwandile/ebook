@@ -14,8 +14,9 @@ class EbookController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
     }
+    
     public function show($id){
         $book = Book::find($id);
         $modules = Module::all()->where('bookID',$id);
@@ -51,7 +52,7 @@ class EbookController extends Controller
         return view('ebook.addBook');
     }
 
-    public function saveBook()
+    public function saveBook(Request $req)
     {
         $book = new Book();
         $book -> title = request('title');
@@ -60,6 +61,14 @@ class EbookController extends Controller
         $book -> discription = request('discription');
         $book -> author = request('author');
         $book -> publisher = request('publisher');
+
+        if($req->file('image1')){
+            $imageLink = $req->file('image1')->store('public/images');
+            $name = str_replace("public/images/", "",$imageLink);
+            $image = array("name"=>$name,"text"=> request('imageName1'),"link"=> $imageLink);
+            $book->images = $image;
+        }
+        
         $message = 'Book added successfully';
         $book -> save();
         return redirect(route('dashboard.books'))->with('success',$message);
@@ -70,12 +79,11 @@ class EbookController extends Controller
         $book = Book::find($id);
         $book -> title = request('title');
         $book -> ISBN = request('ISBN');
-        $book -> categories = request('categories');
         $book -> discription = request('discription');
         $book -> author = request('author');
         $book -> publisher = request('publisher');
+        $book -> categories = request('categories');
         $modules = Module::all()->where('bookID',$id);
-
         return view('ebook.editBook',['book' => $book,'modules' => $modules]);
     }
 }

@@ -13,7 +13,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col">
-                            Unit {{$unit->order}} | Title: {{$unit->title}}
+                            Unit: {{$unit->title}}
                         </div>
                         <div class="col ">
                             <div class=" d-flex justify-content-end">
@@ -31,11 +31,11 @@
                             <div class="col-md-5">
                                 <div class="mb-3 mt-3">
                                     <label for="unitTitle">Title:</label>
-                                    <input type="text" class="form-control mt-1" id="unitTitle" placeholder="Title displayed on sidebar" name="title">
+                                    <input type="text" class="form-control mt-1" id="unitTitle" placeholder="Title displayed on sidebar" name="title" value="{{$unit->title}}">
                                 </div>
                                 <div class="mb-3 mt-3">
                                     <label for="unitHeader">Heading:</label>
-                                    <input type="text" class="form-control mt-1" id="unitHeader" placeholder="Enter unit header" name="header">
+                                    <input type="text" class="form-control mt-1" id="unitHeader" placeholder="Enter unit header" name="header" value="{{$unit->header}}">
                                 </div>
                                 <div class="mt-3">
                                     <label for="unitType">Section type:</label>
@@ -46,7 +46,65 @@
                                 </div>
                                 <div class="mt-2">
                                     <span>Images:</span>
-                                    <div class="form-group row">
+                                        <div class="row px-3">
+                                            <div class="col-sm-3 px-0">
+                                                <div class="imgTile" style='background-image: url("https://cdn.vox-cdn.com/thumbor/hS04MeMUzUIL7u38XraVY0g8dOg=/0x0:3600x2400/920x613/filters:focal(2126x857:2702x1433):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/65893622/Globe_Amaranth_iStock_914482024.8.jpg");'>
+                                                    <div class="container-fluid d-flex justify-content-end">
+                                                        <form action="" method="post">
+                                                            <button type="submit" class="btn">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                                                  </svg>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    image
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 px-0">
+                                                <div class="imgTile" style='background-image: url("https://cdn.vox-cdn.com/thumbor/hS04MeMUzUIL7u38XraVY0g8dOg=/0x0:3600x2400/920x613/filters:focal(2126x857:2702x1433):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/65893622/Globe_Amaranth_iStock_914482024.8.jpg");'>
+                                                    <div class="container-fluid d-flex justify-content-end">
+                                                        <form action="" method="post">
+                                                            <button type="submit" class="btn">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                                                  </svg>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    image
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 px-0">
+                                                <div class="imgTile" style='background-image: url("https://cdn.vox-cdn.com/thumbor/hS04MeMUzUIL7u38XraVY0g8dOg=/0x0:3600x2400/920x613/filters:focal(2126x857:2702x1433):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/65893622/Globe_Amaranth_iStock_914482024.8.jpg");'>
+                                                    <div class="container-fluid d-flex justify-content-end">
+                                                        <form action="" method="post">
+                                                            <button type="submit" class="btn">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                                                  </svg>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    image
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 px-0">
+                                                <div class="imgTile" style='background-image: url("https://cdn.vox-cdn.com/thumbor/hS04MeMUzUIL7u38XraVY0g8dOg=/0x0:3600x2400/920x613/filters:focal(2126x857:2702x1433):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/65893622/Globe_Amaranth_iStock_914482024.8.jpg");'>
+                                                    <div class="container-fluid d-flex justify-content-end">
+                                                        <form action="" method="post">
+                                                            <button type="submit" class="btn">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                                                  </svg>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    image
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {{-- <div class="form-group row">
                                         <div class="col mt-1"  style="padding-right: 0%">
                                             <input type="file" class="form-control mr-4" name="image1" id="image1" enctype="multipart/form-data">
                                         </div>
@@ -77,14 +135,20 @@
                                         <div class="col mt-1">
                                             <input type="text" name="imageName4" id="imageName4" class="form-control" placeholder="image name 4">
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="col">
                                 
                                 <div class="mb-3 mt-3">
                                     <label for="unitText">Text:</label>
-                                    <textarea name="unitText" id="unitText" cols="30" rows="14" class="form-control mt-1"></textarea>
+                                    
+                                        @if ($unit->text != null)
+                                        <script src="javascript">
+                                            document.getElementById('unitText').innerHTML = 'Your html content';
+                                        </script>
+                                        <textarea name="unitText" id="unitText" cols="30" rows="14" class="form-control mt-1"></textarea>
+                                        @endif
                                 </div>
                             </div>
                         </div>

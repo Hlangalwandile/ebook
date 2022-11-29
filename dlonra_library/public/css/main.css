@@ -102,12 +102,13 @@ h1.module-title {
   margin-left: 0;
 }
 
-#admin-sidebar {
-  background-color: rgba(0, 0, 0, 0.1);
+#admin-sidebar .main-dash-nav-item {
+  border: solid red 0px;
+  transition: 0.2s;
 }
 #admin-sidebar .main-dash-nav-item:active, #admin-sidebar .main-dash-nav-item:hover, #admin-sidebar .main-dash-nav-item:focus {
   background-color: #fff;
-  opacity: 0.5;
+  border-left-width: 5px;
 }
 
 .dashboard-main {
@@ -167,4 +168,107 @@ h1.module-title {
 
 .modal-centent {
   background-color: white;
+}
+
+.imgTile {
+  margin-right: 10px;
+  margin-left: auto;
+  border: solid 1px #999;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 5px;
+  height: 110px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.imgTile div {
+  padding-right: 0px;
+}
+
+.btn-primary {
+  background-color: red;
+  border: red;
+}
+.btn-primary:hover {
+  background-color: #fff;
+  color: red;
+  border: solid red 1px;
+}
+
+.btn-outline-primary {
+  color: red;
+  border-color: red;
+}
+.btn-outline-primary:hover {
+  background-color: red;
+  border: solid red 1px;
+}
+
+.bookCoverForm {
+  width: 100%;
+}
+.bookCoverForm #bookCover {
+  width: 100%;
+}
+.bookCoverForm input {
+  width: 100%;
+}
+
+.btn-dlonra-red {
+  background-color: #E9757D;
+  color: white;
+  border: solid 1px #E9757D;
+}
+.btn-dlonra-red:hover {
+  background-color: white;
+  color: #E9757D;
+  border: solid 1px #E9757D;
+}
+
+.btn-dlonra-orange {
+  background-color: #F8AA78;
+  color: white;
+  border: solid 1px #F8AA78;
+}
+.btn-dlonra-orange:hover {
+  background-color: white;
+  color: #F8AA78;
+  border: solid 1px #F8AA78;
+}
+
+.btn-dlonra-yellow {
+  background-color: #FEDB75;
+  color: white;
+  border: solid 1px #FEDB75;
+}
+.btn-dlonra-yellow:hover {
+  background-color: white;
+  color: #FEDB75;
+  border: solid 1px #FEDB75;
+}
+
+#myBooksTable_wrapper input {
+  border-radius: 50px;
+  border-color: #E9757D;
+}
+#myBooksTable_wrapper select {
+  border-radius: 20px;
+  border-color: #E9757D;
+}
+#myBooksTable_wrapper .img-thumbnail {
+  border: none;
+}
+
+.img-pop {
+  z-index: 9;
+  max-width: none !important;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  left: 0;
+  top: 0;
+  text-align: center;
+}
+.img-pop img {
+  max-width: 800px;
 }

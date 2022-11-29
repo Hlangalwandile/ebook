@@ -18,14 +18,19 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+
+
 Route::controller(HomeController::class)->group(function (){
     Route::get('/','index')->name('home');
+    Route::get('/home','index')->name('home');
     Route::get('/library','library')->name('library');
     Route::get('/library/book/{id}','openBook')->name('library.book');
 
 });
 
-Auth::routes();
+Auth::routes([
+    'verify'=> true
+]);
 
 Route::controller(DashboardController::class)->group(function (){
     Route::get('/dashboard','showDashboard')->name('dashboard');

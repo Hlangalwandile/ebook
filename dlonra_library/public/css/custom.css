@@ -1,31 +1,149 @@
- 
-  #buyBookCard{
-    margin-right: 0px;
-    margin-left: auto;
+#buyBookCard {
+  min-width: 20rem;
+}
+
+.book-feature {
+  text-align: left;
+}
+
+#buyBookModal {
+  margin-top: 200px;
+}
+
+#buyBookModal .modal-body {
+  background-color: #111;
+  border: solid 0px;
+  border-radius: 5px;
+  color: white;
+}
+
+#buyBookModal .modal-body .row:nth-child(2) {
+  text-align: right;
+}
+
+#home-sec-top {
+  background-color: rgba(255, 0, 0, 0.5);
+  background-image: url("/assets/images/ebook-dashboard-banner-image.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: bottom -45px right 0px;
+}
+@media (max-width: 768px) {
+  #home-sec-top {
+    background: linear-gradient(0deg, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5)), url("/assets/images/ebook-dashboard-banner-image.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: bottom 0px right 0px;
   }
-  .book-feature{
-    text-align: left;
-  }
-#buyBookModal{
-    margin-top: 200px;
 }
-#buyBookModal .modal-body{
-    background-color: #999;
-    border: solid 0px;
-    border-radius: 5px;
+#home-sec-top h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 60px;
+  padding: 0.3em;
 }
-#buyBookModal .modal-body .row:nth-child(2){
-    text-align: right;
+
+.page-section {
+  min-height: 650px;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
-#home-sec-top{
-    
-    background-color: rgba(255, 0, 0, 0.5);
+
+.btn-primary {
+  background-color: #fd424e;
+  border-color: #fd424e;
 }
-#home-sec-top h1{
-    color: white;
-    font-weight: 700;
-    font-size: 60px;
+.btn-primary:hover {
+  background-color: white;
+  border-color: #fd424e;
+  color: #fd424e;
 }
-.page-section{
-    height: 650px;
+
+.btn-beyond {
+  width: 100%;
+  margin-bottom: 25px;
+  font-weight: 600;
+  padding: 1em;
+}
+.btn-beyond table td {
+  text-align: start;
+}
+.btn-beyond table td:nth-child(1) {
+  width: 100px;
+  text-align: center;
+}
+
+.btn-dlonra-red {
+  background-color: #E9757D;
+  color: white;
+  border: solid 1px #E9757D;
+}
+.btn-dlonra-red:hover {
+  background-color: white;
+  color: #E9757D;
+  border: solid 1px #E9757D;
+}
+
+.btn-dlonra-orange {
+  background-color: #F8AA78;
+  color: white;
+  border: solid 1px #F8AA78;
+}
+.btn-dlonra-orange:hover {
+  background-color: white;
+  color: #F8AA78;
+  border: solid 1px #F8AA78;
+}
+
+.btn-dlonra-yellow {
+  background-color: #FEDB75;
+  color: white;
+  border: solid 1px #FEDB75;
+}
+.btn-dlonra-yellow:hover {
+  background-color: white;
+  color: #FEDB75;
+  border: solid 1px #FEDB75;
+}
+
+.buying-ebook-div {
+  margin-right: 2em;
+  margin-left: 2em;
+  text-align: center;
+  max-width: 250px;
+}
+.buying-ebook-div img {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.textbook-div {
+  color: #111;
+  margin-right: 2em;
+  margin-left: 2em;
+  max-width: 250px;
+  margin-bottom: 1em;
+}
+.textbook-div p {
+  margin: auto 25px;
+}
+.textbook-div img {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+.textbook-div .textbook-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.word-break {
+  word-break: break-all;
+}
+
+a {
+  color: #E9757D;
+  text-decoration: none;
+}
+a:hover {
+  color: #F8AA78;
 }

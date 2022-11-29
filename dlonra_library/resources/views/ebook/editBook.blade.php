@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="container col-md-5">
-    <form action="{{route('ebook.saveBook')}}" method="POST" >
+    <form action="{{route('ebook.saveBook')}}" method="POST" enctype="multipart/form-data" class="mb-5">
           @csrf
         <div class="row">
             <div class="col-md-12">
@@ -24,6 +24,10 @@
                         <input type="text" class="form-control" id="addpublisher" value="{{$book->publisher}}" name="publisher" placeholder="publisher">
                       </div>
                       <div class="mb-3">
+                        <label for="bookCover" class="form-label">Book Cover:</label>
+                        <input type="file" name="bookCover" class="form-control" id="bookCover">
+                      </div>
+                      <div class="mb-3">
                         <label for="categories" class="form-label">Select Categories:</label>
                         <select name="categories[]"  id="categories" class="form-control" multiple>
                             <option value="Electrical Engineering">Electrical Engineering</option>
@@ -37,12 +41,7 @@
                 </div>
         </div>
     </form>
-    <div class="col-md-4 ">
-        <form action="" method="post" class="mt-3" enctype="multipart/form-data">
-            @csrf
-            <input type="file" name="bookCover" class="form-control" id="">
-        </form>
-    </div>
+
     </div>
     <div class="container col-md-6">
         <h2>Modules</h2>
@@ -53,7 +52,6 @@
                 <input type="text" class="form-control" id="addModule" name='title' placeholder="title" required>
             </div>
               <button type="submit" class="btn btn-primary">add module</button>
-              
         </form>
         @foreach ($modules as $module)
         <div class="card mb-3">

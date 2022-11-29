@@ -2,11 +2,10 @@
 @section('content')
 <div class="container">
     <h2>Add Book</h2>
-    <form action="{{route('ebook.saveBook')}}" method="POST" >
+    <form action="{{route('ebook.saveBook')}}" method="POST" enctype="multipart/form-data">
       @csrf
     <div class="row">
-        <div class="col-md-3">
-                
+        <div class="col-md-4">
                 <div class="mb-3">
                     <label for="addTitle" class="form-label">Book Title:</label>
                     <input type="text" class="form-control" id="addTitle" name='title' placeholder="title">
@@ -28,6 +27,10 @@
                     <select name="categories[]"  id="categories" class="form-control" multiple>
                         <option value="Electrical Engineering">Electrical Engineering</option>
                     </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="addcover" class="form-label">Book Cover:</label>
+                    <input type="file" class="form-control" id="addcover" name="image1">
                   </div>
                   <div class="mb-3">
                     <label for="discription" class="form-label">Book discription:</label>

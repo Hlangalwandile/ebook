@@ -21,3 +21,15 @@ window.addEventListener("resize",()=>{
             menu_btn.classList.remove("active-flip")
         }
 });
+
+// Book image pop up
+ var unit_image = document.querySelector(".unit-img-col")
+ unit_image.addEventListener("click",()=>{
+    if(unit_image.classList.contains("img-pop")){
+        unit_image.classList.remove("img-pop");
+    } 
+        else 
+    {
+        unit_image.classList.add("img-pop");
+    }
+})

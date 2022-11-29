@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Module;
-
+use Auth;
 
 class ModuleController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+    }
+
     public function addModule($bookID)
     {
         $module = new Module();
