@@ -36,12 +36,14 @@ Route::controller(DashboardController::class)->group(function (){
     Route::get('/dashboard','showDashboard')->name('dashboard');
     Route::get('/dashboard/books','showBooks')->name('dashboard.books');
     Route::get('/dashboard/redeem','showRedeem')->name('dashboard.redeem');
+    Route::post('/deleteBook/{id}','deleteBook')->name('deleteBook');
 });
 
 Route::controller(EbookController::class)->group(function (){
     Route::get('/book/{id}','show')->name('ebook.show');
     Route::get('/books/addBook','addBook')->name('ebook.addBook');
     Route::get('/books/editBook/{id}','editBook')->name('ebook.editBook');
+    Route::POST('/books/saveEditBook/{id}','saveEditBook')->name('saveEditBook');
     Route::get('/books/{book}/{module}','showModule')->name('ebook.showModule');
     Route::post('/ebook/saveBook','saveBook')->name('ebook.saveBook');
 });

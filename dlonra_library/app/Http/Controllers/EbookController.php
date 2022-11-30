@@ -42,9 +42,16 @@ class EbookController extends Controller
     }
 
     public function editBook($id){
-        $book = Book::find($id);
-        $modules = Module::all()->where('bookID',$id);
-        return view('ebook.editBook',['book' => $book,'modules' => $modules]);
+        if(Auth()->user()->role == 1)
+            {
+                $book = Book::find($id);
+                $modules = Module::all()->where('bookID',$id);
+                return view('ebook.editBook',['book' => $book,'modules' => $modules]);
+            } 
+        else
+            {
+                return redirect(route('home'))->with('error','not authorised to access this page');
+            }  
     }
 
     public function addBook()
@@ -74,16 +81,28 @@ class EbookController extends Controller
         return redirect(route('dashboard.books'))->with('success',$message);
     }
 
-    public function saveEditBook($id)
+    public function saveEditBook(Request $req,$id)
     {
         $book = Book::find($id);
         $book -> title = request('title');
         $book -> ISBN = request('ISBN');
+        $book -> categories = request('categories');
         $book -> discription = request('discription');
         $book -> author = request('author');
         $book -> publisher = request('publisher');
-        $book -> categories = request('categories');
-        $modules = Module::all()->where('bookID',$id);
-        return view('ebook.editBook',['book' => $book,'modules' => $modules]);
+
+        if($req->file('image1')){
+            $imageLink = $req->file('image1')->store('public/images');
+            $name = str_replace("public/images/", "",$imageLink);
+            $image = array("name"=>$name,"text"=> request('imageName1'),"link"=> $imageLink);
+            $book->images = $image;
+        }
+        
+        $message = 'Book updated successfully';
+        $book -> save();
+        return redirect(route('dashboard.books'))->with('success',$message);
     }
+
+    // public function deleteBook(){
+    // }
 }

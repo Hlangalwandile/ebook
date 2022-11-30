@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="container col-md-5">
-    <form action="{{route('ebook.saveBook')}}" method="POST" enctype="multipart/form-data" class="mb-5">
+    <form action="{{route('saveEditBook',$book->id)}}" method="POST" enctype="multipart/form-data" class="mb-5">
           @csrf
         <div class="row">
             <div class="col-md-12">
@@ -24,8 +24,8 @@
                         <input type="text" class="form-control" id="addpublisher" value="{{$book->publisher}}" name="publisher" placeholder="publisher">
                       </div>
                       <div class="mb-3">
-                        <label for="bookCover" class="form-label">Book Cover:</label>
-                        <input type="file" name="bookCover" class="form-control" id="bookCover">
+                        <label for="image1" class="form-label">Book Cover:</label>
+                        <input type="file" name="image1" class="form-control" id="image1">
                       </div>
                       <div class="mb-3">
                         <label for="categories" class="form-label">Select Categories:</label>
@@ -37,7 +37,7 @@
                         <label for="discription" class="form-label">Book discription:</label>
                         <textarea name="" id="discription" name="discription" cols="30" class="form-control" rows="10">{{$book->discription}}</textarea>
                       </div>
-                      <button type="submit" class="btn btn-primary">update</button>
+                      <button type="submit" class="btn btn-dlonra-red">update</button>
                 </div>
         </div>
     </form>
@@ -51,7 +51,7 @@
                 <label for="addModule" class="form-label">Module Title:</label>
                 <input type="text" class="form-control" id="addModule" name='title' placeholder="title" required>
             </div>
-              <button type="submit" class="btn btn-primary">add module</button>
+              <button type="submit" class="btn btn-dlonra-red">add module</button>
         </form>
         @foreach ($modules as $module)
         <div class="card mb-3">
@@ -60,7 +60,7 @@
             <div class="card-footer ">
                 <div class="row">
                     <div class="col-sm-6">
-                        <a href="{{route('units.addUnit',[$module->bookID,$module->id])}}" class="btn btn-primary">Add unit</a>
+                        <a href="{{route('units.addUnit',[$module->bookID,$module->id])}}" class="btn btn-dlonra-red">Add unit</a>
                         <a href="{{route('units.index',[$module->bookID,$module->id])}}" class="btn btn-outline-primary">Units</a>
                     </div>
                     <div class="col-sm-6 d-flex justify-content-end">

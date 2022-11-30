@@ -104,6 +104,7 @@ class UnitController extends Controller
         $unit->delete();
         return redirect(route('units.index',[$book,$module]))->with('success','Unit deleted successfully');
     }
+    
 
     public function pushUp($book,$module,$id)
     {

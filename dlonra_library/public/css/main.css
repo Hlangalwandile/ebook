@@ -247,15 +247,15 @@ h1.module-title {
   border: solid 1px #FEDB75;
 }
 
-#myBooksTable_wrapper input {
+#myBooksTable_wrapper input, #redeemBooksTable_wrapper input {
   border-radius: 50px;
   border-color: #E9757D;
 }
-#myBooksTable_wrapper select {
+#myBooksTable_wrapper select, #redeemBooksTable_wrapper select {
   border-radius: 20px;
   border-color: #E9757D;
 }
-#myBooksTable_wrapper .img-thumbnail {
+#myBooksTable_wrapper .img-thumbnail, #redeemBooksTable_wrapper .img-thumbnail {
   border: none;
 }
 

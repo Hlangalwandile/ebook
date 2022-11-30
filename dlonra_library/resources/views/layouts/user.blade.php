@@ -34,6 +34,18 @@
                         <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                       </svg>
                 </button>
+                @if(session()->has('success'))
+                    @php
+                        $message = session('success');
+                    @endphp
+                    <div class="d-flex justify-content-end">
+                        <div class="alert alert-success alert-dismissible mx-5">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <strong>Success!</strong> {{$message}}
+                        </div>
+                    </div>
+                @endif 
+                
                 @yield('content')
             </div>
         </main>
@@ -53,6 +65,7 @@
 $(document).ready( function () {
     $.trumbowyg.svgPath = '/assets/icons.svg';
     $('#myBooksTable').DataTable();
+    $('#redeemBooksTable').DataTable();
     $('#unitText').trumbowyg();
    
 } );
