@@ -23,8 +23,8 @@ window.addEventListener("resize",()=>{
 });
 
 // Book image pop up
- var unit_image = document.querySelector(".unit-img-col")
- unit_image.addEventListener("click",()=>{
+ var unit_image = document.querySelector(".unit-img-col");
+ document.querySelectorAll(".unit-img-col").forEach(unit_image => unit_image.addEventListener("click",()=>{
     if(unit_image.classList.contains("img-pop")){
         unit_image.classList.remove("img-pop");
     } 
@@ -32,4 +32,4 @@ window.addEventListener("resize",()=>{
     {
         unit_image.classList.add("img-pop");
     }
-})
+}));

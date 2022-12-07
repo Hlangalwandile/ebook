@@ -26,9 +26,7 @@
                       $link = 'storage/images/'.$imageArray['name'];
                   }
               @endphp
-              <img src="{{asset($link)}}"  class="img-thumbnail" alt="bool cover" width="100">  
-    
-                  
+              <img src="{{asset($link)}}"  class="img-thumbnail" alt="bool cover" width="100">        
           @endif
             </th>
             <td>
@@ -43,12 +41,27 @@
               @endif
             </td>
             <td>
-              <form action="" method="post">
+              @php
+              $owned = 0;
+              foreach ($mybooks as $mybookID) {
+                if ($mybookID['id'] == $book->id) {
+                  $owned = 1;
+                } 
+              }
+              @endphp
+              @if ($owned)
+                  <a class="btn btn-dlonra btn-dlonra-red mb-2" href="{{route('ebook.show',$book->id)}}">Read book</a><br>
+              @else
+              <form action="{{route('redeemToken')}}" method="post">
+                @csrf
                 <div class="input-group mb-3 mcd-redeem-group">
-                    <input type="text" class="form-control mcd-redeem-input" style="border-right: 0px; border-top-right-radius:0%;border-bottom-right-radius:0px;" placeholder="enter redeem token" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <button class="btn btn-dlonra-red" style="border-top-right-radius:15px;border-bottom-right-radius:15px;" type="button">Redeem</button>
+                    <input type="hidden" name="book" value="{{$book->id}}">
+                    <input type="text" class="form-control mcd-redeem-input" name="token" style="border-right: 0px; border-top-right-radius:0%;border-bottom-right-radius:0px;" placeholder="enter redeem token" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+                    <button class="btn btn-dlonra-red" style="border-top-right-radius:15px;border-bottom-right-radius:15px;" type="submit">Redeem</button>
                 </div>
               </form>
+              @endif
+              
             </td>
           </tr>
         @endforeach

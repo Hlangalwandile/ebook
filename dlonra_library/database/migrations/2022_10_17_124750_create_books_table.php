@@ -20,7 +20,7 @@ class CreateBooksTable extends Migration
             $table->json('categories')->nullable();
             $table->string('author')->nullable();
             $table->json('images')->nullable();
-            $table->string('discription')->nullable();
+            $table->text('discription')->nullable();
             $table->string('publisher')->nullable();
             $table->timestamps();
         });

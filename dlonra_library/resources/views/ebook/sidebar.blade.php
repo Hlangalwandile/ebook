@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand d-flex flex-column align-item-start" id="ebook-sidebar">
     <a href="#" class="navbar-brand  mt-5">
         <div class="display-5">
+            @foreach ($modules as $mod)
+                {{$mod->id}} <br>
+            @endforeach
             <span class="sidebarNavigator">
                 @php
                     $next = 0;
@@ -28,7 +31,7 @@
     </a>
     <ul class="navbar-nav d-flex flex-column mt-5 w-100">
         @foreach ($units as $unit)
-        @if ($unit->moduleID == $current_module)
+        @if ($unit->order == $current_module)
         <li class="nav-item ebook-nav-item  w-100">
             <a href="#unit-{{$unit->id}}" class="nav-link  pl-4">{{$unit->header}}</a>
         </li>

@@ -155,7 +155,7 @@ h1.module-title {
         width: 100%;
     }
     .unit-img-col{
-        max-width: 800px;
+        max-width: 400px;
     }
 }
 
@@ -236,6 +236,9 @@ h1.module-title {
       border: solid 1px $DLonraOrange;
     }
   }
+  .btn-dlonra{
+    border-radius: 20px;
+  }
   .btn-dlonra-yellow{
     background-color: $DLonraYellow;
     color: white;
@@ -264,6 +267,11 @@ h1.module-title {
         
     }
 }
+.unit-img-col{
+    img{
+        max-width: 400px;
+    }
+}
 .img-pop {
     z-index: 9;
     max-width: none !important;
@@ -277,3 +285,4 @@ h1.module-title {
         max-width: 800px;
     }
 }
+

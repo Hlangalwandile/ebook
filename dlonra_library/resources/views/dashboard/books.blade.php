@@ -54,12 +54,12 @@
               @endif
             </td>
             <td>
-              <a class="btn btn-dlonra-red mb-2" href="{{route('ebook.show',$book->id)}}">Read book</a><br>
+              <a class="btn btn-dlonra btn-dlonra-red mb-2" href="{{route('ebook.show',$book->id)}}">Read book</a><br>
               @if(auth()->user()->role == 1)
-                <a href="{{route('ebook.editBook',$book->id)}}" class="btn btn-dlonra-orange mb-2">Edit</a> <br>
+                <a href="{{route('ebook.editBook',$book->id)}}" class="btn btn-dlonra btn-dlonra-orange mb-2">Edit</a> <br>
                 <form action="{{route('deleteBook',$book->id)}}" method="post">
                   @csrf
-                  <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger mb-2">Delete</button>
+                  <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-dlonra btn-danger mb-2">Delete</button>
                 </form>
               @endif
               

@@ -18,7 +18,7 @@
     @endif    
     </span><br>
     @foreach ($modules as $module)
-        @if ( $module->id== $current_module)
+        @if ( $module->order == $current_module)
             {{$module->title}}
         @endif
     @endforeach

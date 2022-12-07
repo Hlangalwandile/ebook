@@ -21,7 +21,7 @@
                         }
                     @endphp
                     <div class="col-md unit-img-col">
-                        <img src="{{asset($link)}}" alt="{{asset($link)}}" >
+                        <img src="{{asset($link)}}" class="img-unit-2" alt="{{asset($link)}}" >
                         <p>{{$imageArray['text']}}</p>
                     </div>
                 @endif
@@ -35,7 +35,7 @@
                         }
                     @endphp
                     <div class="col-md unit-img-col">
-                        <img src="{{asset($link)}}" alt="{{asset($link)}}" >
+                        <img src="{{asset($link)}}" class="img-unit-2" alt="{{asset($link)}}" >
                         <p>{{$imageArray['text']}}</p>
                     </div>
                 @endif
@@ -48,7 +48,7 @@
                         }
                     @endphp
                     <div class="col-md unit-img-col">
-                        <img src="{{asset($link)}}" alt="{{asset($link)}}" >
+                        <img src="{{asset($link)}}" class="img-unit-2" alt="{{asset($link)}}" >
                         <p>{{$imageArray['text']}}</p>
                     </div>
                 @endif
@@ -61,7 +61,7 @@
                         }
                     @endphp
                     <div class="col-md unit-img-col">
-                        <img src="{{asset($link)}}" alt="{{asset($link)}}" >
+                        <img src="{{asset($link)}}" class="img-unit-2" alt="{{asset($link)}}" >
                         <p>{{$imageArray['text']}}</p>
                     </div>
                 @endif

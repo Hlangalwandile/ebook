@@ -20,13 +20,40 @@ class EbookController extends Controller
     public function show($id){
         $book = Book::find($id);
         $modules = Module::all()->where('bookID',$id);
-        if(count($modules)){
-            $units = Unit::all()->where('bookID',$id);
-            return view('ebook.page',['book' => $book , 'units' => $units, 'modules' => $modules, 'current_module' => 1 ]);
-        } else {
-            $message = 'Book has no chapters yet';
-            return redirect(route('dashboard.books'))->with('error',$message);
-        }  
+        $role = auth()->user()->role;
+        if($role == 1){
+            if(count($modules)){
+                $units = Unit::all()->where('bookID',$id);
+                return view('ebook.page',['book' => $book , 'units' => $units, 'modules' => $modules, 'current_module' => 1 ]);
+            } else {
+                $message = 'Book has no chapters yet';
+                return redirect(route('dashboard.books'))->with('error',$message); 
+            } 
+        } 
+
+        if(isset(auth()->user()->books{'books'})){
+            $mybooks = auth()->user()->books{'books'};
+            foreach($mybooks as $mybook)
+            {
+                if($mybook['id'] == $id){
+                    if(count($modules)){
+                        $units = Unit::all()->where('bookID',$id);
+                        return view('ebook.page',['book' => $book , 'units' => $units, 'modules' => $modules, 'current_module' => 1 ]);
+                    } else {
+                        $message = 'Book has no chapters yet';
+                        return redirect(route('dashboard.books'))->with('error',$message);
+                    }  
+                }
+            }
+            $message = 'Book not owned 1';
+            return redirect(route('dashboard.books'))->with('error',$message); 
+        }
+            else
+        {
+            $message = 'Book not owned 2';
+            return redirect(route('dashboard.books'))->with('error',$message); 
+        }
+        
     }
     
     public function showModule($id,$module){
@@ -40,6 +67,11 @@ class EbookController extends Controller
             return redirect(route('dashboard.books'))->with('error',$message);
         } 
     }
+
+    public static function getModuleIDByOrder($book,$order){
+        $modules = Module::first()->where('bookID',$book)->where('order',$order);
+    }
+
 
     public function editBook($id){
         if(Auth()->user()->role == 1)

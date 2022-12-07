@@ -45,6 +45,17 @@
                         </div>
                     </div>
                 @endif 
+                @if (session()->has('error'))
+                    @php
+                        $message = session('error');
+                    @endphp
+                    <div class="d-flex justify-content-end">
+                        <div class="alert alert-danger alert-dismissible mx-5">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <strong>Error!</strong> {{$message}}
+                        </div>
+                    </div>
+                @endif
                 
                 @yield('content')
             </div>

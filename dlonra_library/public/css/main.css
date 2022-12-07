@@ -150,7 +150,7 @@ h1.module-title {
   width: 100%;
 }
 .unit .unit-img-col {
-  max-width: 800px;
+  max-width: 400px;
 }
 
 .btngotodash {
@@ -236,6 +236,10 @@ h1.module-title {
   border: solid 1px #F8AA78;
 }
 
+.btn-dlonra {
+  border-radius: 20px;
+}
+
 .btn-dlonra-yellow {
   background-color: #FEDB75;
   color: white;
@@ -257,6 +261,10 @@ h1.module-title {
 }
 #myBooksTable_wrapper .img-thumbnail, #redeemBooksTable_wrapper .img-thumbnail {
   border: none;
+}
+
+.unit-img-col img {
+  max-width: 400px;
 }
 
 .img-pop {

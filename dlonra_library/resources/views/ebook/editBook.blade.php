@@ -6,7 +6,7 @@
           @csrf
         <div class="row">
             <div class="col-md-12">
-                <h2>Add Book</h2>
+                <h2>Edit Book</h2>
                     <div class="mb-3">
                         <label for="addTitle" class="form-label">Book Title:</label>
                         <input type="text" class="form-control" id="addTitle" value="{{$book->title}}" name='title' placeholder="title">

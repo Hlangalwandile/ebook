@@ -18,7 +18,7 @@ class ModuleController extends Controller
     public function addModule($bookID)
     {
         $module = new Module();
-        $getSortOrder = Module::select('order')->max('order');
+        $getSortOrder = Module::where('bookID',$bookID)->select('order')->max('order');
         $module -> bookID = $bookID;
         $module -> order = $getSortOrder + 1;
         $module -> title = request('title');
@@ -27,3 +27,4 @@ class ModuleController extends Controller
         return redirect(route('ebook.editBook',$bookID))->with('success',$message);
     }
 }
+

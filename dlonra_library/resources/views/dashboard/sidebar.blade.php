@@ -3,7 +3,7 @@
         <div class="display-5">
             <span class="sidebarNavigator">
                 <span class="chapter">
-                    Admin 
+                    <a href="{{ url('/') }}" style="text-decoration: none">Home </a>
                 </span>
             </span>
         </div>

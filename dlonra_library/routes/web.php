@@ -34,9 +34,10 @@ Auth::routes([
 
 Route::controller(DashboardController::class)->group(function (){
     Route::get('/dashboard','showDashboard')->name('dashboard');
-    Route::get('/dashboard/books','showBooks')->name('dashboard.books');
-    Route::get('/dashboard/redeem','showRedeem')->name('dashboard.redeem');
+    Route::get('/books','showBooks')->name('dashboard.books');
+    Route::get('/redeem','showRedeem')->name('dashboard.redeem');
     Route::post('/deleteBook/{id}','deleteBook')->name('deleteBook');
+    Route::post('redeem/token','redeemToken')->name('redeemToken');
 });
 
 Route::controller(EbookController::class)->group(function (){
